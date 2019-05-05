@@ -307,6 +307,7 @@ header .scroll-down:hover {
   /* 增加阴影效果 
   offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 20px 20px 30px 0px rgba(0,0,0,0.1);
+  transition: all .5s; /* 给卡片增加过度效果 */
 }
 
 @media screen and (min-width: 769px) {
@@ -325,11 +326,14 @@ header .scroll-down:hover {
   overflow: hidden;
   margin: 24px;
   margin: 0 auto;
+  transition: all .5s; /* 给图片的容器增加过度 */
 }
 .product figure img{
   max-width: 100%;
   height: auto;
   display: block;
+  transition: all 1s; /* 给图片增加过度 */
+  transform: scale(1.2); /* 默认扩大图片至 1.2 倍 */
 }
 
 .product .desc {

@@ -23,6 +23,47 @@ function installMenuEvent() {
     menuTimeline.restart(true)
   })
 }
+
+function installHomeEvent() {
+  // scroll magic
+  const controller = new ScrollMagic.Controller()
+
+  // 找到所有元素
+  document.querySelectorAll("section.product").forEach((e, index) => {
+    const wrapper = e.querySelector("figure.img-wrapper")
+    const card = e.querySelector(".mycard")
+    const img = wrapper.querySelector("img")
+
+    // 如果是宽屏则执行下面的
+    if (isWide) {
+      new ScrollMagic.Scene({
+        triggerElement: e, // 触发动效的元素
+        duration: "100%" // 动效的滚动高度
+      })
+        .setTween(card, 1, { x: index % 2 == 0 ? 100 : -100 }) // 在滚动式执行 card 元素的动效，需要 gsap 以及 scrollmagic 的 gsap plugin
+        // .addIndicators({name: "??"}) // 调试用，如果加上会在页面上显示触发元素等
+        .addTo(controller)
+    }
+
+    new ScrollMagic.Scene({
+      triggerElement: e,
+      duration: "100%"
+    })
+      .setTween(wrapper, 1.5, { x: 0, y: -20 })
+      // .addIndicators({name: "??"})
+      .addTo(controller)
+
+    new ScrollMagic.Scene({
+      triggerElement: e,
+      duration: "100%"
+    })
+      .setTween(img, 1.5, { x: 0, y: -20 })
+      // .addIndicators({name: "2??"})
+      .addTo(controller)
+  })
+
+}
+
 // enterHome 函数包含了页面载入后要执行的操作
 function enterHome() {
   // 给相关元素增加 animation 类以执行动画，在 CSS 中给 animation 类定义了动画
@@ -32,6 +73,7 @@ function enterHome() {
   document.querySelector("header p.mysubtitle").classList.add("animation")
   // 增加菜单相关事件
   installMenuEvent()
+  installHomeEvent()
 }
 // 在载入完成后执行 enterHome 函数
 Pace.once("done", enterHome)
