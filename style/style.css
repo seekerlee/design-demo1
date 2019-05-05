@@ -123,27 +123,6 @@ nav .container {
   color: #2C2D21;
 }
 
-/* header */
-@keyframes fadein-down {
-  from {
-      transform: translate(0, -1rem);
-      opacity:0;
-  }
-  to {
-      transform: translate(0);
-      opacity:1;
-  }
-}
-@keyframes fadein-subtitle {
-  from {
-    letter-spacing: 6px;
-      opacity:0;
-  }
-  to {
-    letter-spacing: auto;
-      opacity:1;
-  }
-}
 header {
   display: flex;
   text-align: center;
