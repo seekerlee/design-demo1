@@ -171,7 +171,25 @@ nav .container {
 .menu-container ul li a, .menu-container ul li a:link, .menu-container ul li a:visited{
   color: #2C2D21;
 }
-
+/* 使用 ::after 增加伪元素实现效果 */
+.menu-container ul li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  right: -15px;
+  height: 0;
+  opacity: .33;
+  background-color: #073743;
+  transition: all .25s ease;
+}
+.menu-container ul li a:hover::after, .menu-container ul li a.is-active::after {
+  height: 33%;
+}
+.menu-container ul li a:active::after {
+  background-color: #45C983;
+}
 /* header */
 /* 定义动画名为 fadein-down */
 @keyframes fadein-down {
