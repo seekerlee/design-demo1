@@ -18,24 +18,11 @@ html, body {
 .font-hei {
   font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
-/*  */
 
-
-/*  */
 .is-fullheight {
   height: 100vh;
 }
-video.bg { 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  transform: translate(-50%, -50%);
-}
+
 .text-white {
   color: #EEECED;
 }
@@ -52,9 +39,9 @@ header, nav {
 header {
   background-color: darkslategrey;
   background-image: url("../media/image/dan-otis.jpg");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  /* 添加 css 让背景图片不跟随页面滚动 */
 }
 .logo-container {
   position: absolute;
@@ -95,8 +82,6 @@ nav .container {
   width: 72px;
   height: 72px;
   z-index: 100;
-  transition: transform 0.5s ease-in-out 0.125s;
-  cursor: pointer;
 }
 #menu-button div {
   position: absolute;
@@ -104,8 +89,6 @@ nav .container {
   height: 2px;
   width: 24px;
   background-color: rgba(238, 236, 237, 1);
-  transition: all .25s;
-  /* transition: width 0.125s ease-in-out, top 0.25s ease-in-out 0.5s, transform 0.25s ease-out 0.25s, opacity 0.001s linear 0.5s; */
 }
 #menu-button div:nth-child(1) {
   top: 29px;
@@ -116,57 +99,21 @@ nav .container {
 #menu-button div:nth-child(3) {
   top: 41px;
 }
-#menu-button:hover div:nth-child(2) {
-  transform: rotate(90deg);
-}
-#menu-button:hover div:nth-child(1), #menu-button:hover div:nth-child(3) {
-  top: 35px;
-}
-#menu-button.opened div{
-  background: #2C2D21 !important;
-}
-#menu-button.opened div:nth-child(1) {
-  top: 35px;
-  transform: rotate(45deg);
-}
-#menu-button.opened div:nth-child(2) {
-  opacity: 0;
-}
-#menu-button.opened div:nth-child(3) {
-  top: 35px;
-  transform: rotate(-45deg);
-}
+
 /* menus */
 .menu-container {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 100vw;
-  top: -100vh;
   background: rgba(238,236,237, 0);
-  transition: all .5s;
   z-index: 50;
   padding: 0 96px;
-  /*  */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
-.menu-container.opened {
-  left: 0;
-  top: 0;
-  background: rgb(238,236,237, 1);
-}
+
 .menu-container ul {
   list-style: none;
   font-size: 5rem;
 }
 .menu-container ul li{
   padding: .5rem;
-  opacity: 0;
-}
-.menu-container.opened ul li {
-  opacity: 1;
 }
 .menu-container ul li a {
   display: block;
@@ -175,25 +122,6 @@ nav .container {
 .menu-container ul li a, .menu-container ul li a:link, .menu-container ul li a:visited{
   color: #2C2D21;
 }
-.menu-container ul li a::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: -15px;
-  right: -15px;
-  height: 0;
-  opacity: .33;
-  background-color: #073743;
-  transition: all .25s ease;
-}
-.menu-container ul li a:hover::after, .menu-container ul li a.is-active::after {
-  height: 33%;
-}
-.menu-container ul li a:active::after {
-  background-color: #45C983;
-}
-
 
 /* header */
 @keyframes fadein-down {
@@ -242,32 +170,7 @@ header p.mysubtitle {
   font-size: 4.5vw;
   text-transform: uppercase;
 }
-header h1 span {
-  display: inline-block;
-  opacity: 0;
-}
-header h1 span.animation {
-  animation: fadein-down 1.5s ease-out forwards;
-}
-header p.mysubtitle {
-  opacity: 0;
-}
-header p.mysubtitle.animation {
-  animation: fadein-subtitle 1.5s ease-out forwards;
-  animation-delay: 1s;
-}
-header h1 span:nth-child(1){
-  animation-delay: 0.2s;
-}
-header h1 span:nth-child(2) {
-  animation-delay: 0.4s;
-}
-header h1 span:nth-child(3) {
-  animation-delay: 0.6s;
-}
-header h1 span:nth-child(4) {
-  animation-delay: 0.8s;
-}
+
 header .scroll-down {
   width: 72px;
   margin: 0 auto;
@@ -288,29 +191,14 @@ header .scroll-down:hover {
     font-size: 3vw;
   }
 }
-/*  */
-
-.margin-section {
-  /* box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.3); */
-}
 /* product */
 .product {
   padding: 96px 48px;
   background: #EEECED;
 }
 
-@media screen and (min-width: 769px) {
-  .product:nth-child(odd) {
-    margin: 24px 0 24px 24px;
-  }
-  .product:nth-child(even) {
-    margin: 24px 24px 24px 0;
-  }
-}
-
 .product figure {
   position: relative;
-  transition: all .5s;
   overflow: hidden;
   margin: 24px;
   margin: 0 auto;
@@ -318,47 +206,15 @@ header .scroll-down:hover {
 .product figure img{
   max-width: 100%;
   height: auto;
-  /* max-height: 600px; */
   display: block;
+}
 
-  transition: all 1s;
-  transform: scale(1.2);
-  /* opacity: 0; */
-}
-.product figure a:hover img{
-  transform: scale(1.3) !important;
-  z-index: 100;
-}
-/* .product figure::after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  display: block;
-  content: ""
-} */
 .product .desc {
   display: flex;
   align-items: center;
   text-align: center;
 }
-.product .desc .mycard{
-  background-color: white;
-  z-index: 20;
-  padding: 48px;
-  box-shadow: 20px 20px 30px 0px rgba(0,0,0,0.1);
-  transition: all .5s;
-}
-@media screen and (min-width: 769px) {
-  .product:nth-child(odd) .desc .mycard{
-    transform: translateX(50px);
-  }
-  .product:nth-child(even) .desc .mycard{
-    transform: translateX(-50px);
-  }
-}
+
 .product .desc .mycard hr{
   background-color: rgba(44,45,33, .4);
   /* width: 10rem; */
@@ -376,11 +232,6 @@ header .scroll-down:hover {
 .product .desc h3 {
   font-size: 2rem;
 }
-/* .product.has-bg {
-  background-image: url(../media/image/dan-otis.jpg);
-  background-size: cover;
-  background-position: center;
-} */
 /* footer */
 footer {
   text-align: center;
@@ -412,10 +263,4 @@ footer .social ul {
 footer .social ul > li {
   padding: 0 .8rem;
   margin: 0;
-}
-
-@media screen and (min-width: 769px) {
-  footer {
-    background-attachment: fixed;
-  }
 }
