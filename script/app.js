@@ -62,6 +62,28 @@ function installHomeEvent() {
       .addTo(controller)
   })
 
+  // 在滚动到 #trigger1 元素时，讲菜单按钮的颜色变黑
+  new ScrollMagic.Scene({
+    triggerElement: "#trigger1",
+  })
+    .setTween("#menu-button div", 0.1, { backgroundColor: "black" })
+    // .addIndicators({name: "hhhhh"})
+    .addTo(controller)
+
+  // smooth scroll
+  document.querySelectorAll("a[href^='#']").forEach(anchor => {
+    anchor.addEventListener('click', (event) => {
+      event.preventDefault()
+      // scroll to elemnet
+      let target = anchor.getAttribute('href')
+      let targetEle = document.querySelector(target)
+      targetEle.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
+    })
+  })
+
 }
 
 // enterHome 函数包含了页面载入后要执行的操作

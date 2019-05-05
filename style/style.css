@@ -61,7 +61,7 @@ header {
   height: 36px;
   width: auto;
 }
-/* trigger1 */
+/* trigger1 设置触发 scrollmagic 的元素位置 */
 #trigger1 {
   position: absolute;
   top: calc(150vh - 48px);
