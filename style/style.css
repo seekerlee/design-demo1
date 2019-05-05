@@ -39,9 +39,11 @@ header, nav {
 header {
   background-color: darkslategrey;
   background-image: url("../media/image/dan-otis.jpg");
+   /* 添加 css 让背景图片不跟随页面滚动 */
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  /* 添加 css 让背景图片不跟随页面滚动 */
+  
 }
 .logo-container {
   position: absolute;
@@ -175,6 +177,26 @@ header .scroll-down:hover {
   padding: 96px 48px;
   background: #EEECED;
 }
+/* 让文字形成卡片效果 */
+.product .desc .mycard{
+  background-color: white;
+  z-index: 20;
+  padding: 48px;
+  /* 增加阴影效果 
+  offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 20px 20px 30px 0px rgba(0,0,0,0.1);
+}
+
+@media screen and (min-width: 769px) {
+  /* 选择奇数的 .product */
+  .product:nth-child(odd) {
+    margin: 24px 0 24px 24px;
+  }
+  /* 选择偶数的 .product */
+  .product:nth-child(even) {
+    margin: 24px 24px 24px 0;
+  }
+}
 
 .product figure {
   position: relative;
@@ -242,4 +264,10 @@ footer .social ul {
 footer .social ul > li {
   padding: 0 .8rem;
   margin: 0;
+}
+/* 手机平台对 background-attachment: fixed 不好，仅对大屏优化 */
+@media screen and (min-width: 769px) {
+  footer {
+    background-attachment: fixed;
+  }
 }
