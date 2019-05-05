@@ -1,5 +1,12 @@
-# Rich interaction with advanced CSS and JavaScript
-这个 Code Lab 我将会讲解并和大家一起用一些 CSS/JavaScript 的技术，实现一些有用的特效，丰富网页体验。例如用 css transition 实现动态 hover 效果，用 css animation 实现页面加载动画，以及用一些 JavaScript 库在页面加载时，页面滚动时，页面跳转时实现动画效果。需要你自带电脑，会基本的 HTML/CSS/JavaScript 技术。
+# 练习
 
-## 我的简介
-李实，独立程序员/教师/Design Sprint Master。一直在一线编程，曾服务于烽火通信，Oracle，YoMail 等公司，现在花大部分时间在编程教育上。除此之外，业余还在参与 TEDx 社区，GDG 社区以及一些开源技术社区。
+0. 在本地打开浏览页面，安装 vs code Live Server 插件(可选)
+1. 修改 copyright 和 background: fixed 增加 margin
+2. 让标题动画进入 css animation
+3. 使用 pace.js
+4. 实现菜单展开
+5. 实现菜单图标动画
+6. 实现菜单 hover 效果
+7. 实现菜单展开动画 gsap
+8. 让文字为卡片风格
+9. 用 scrollmagic + gsap 让卡片和图片移动
