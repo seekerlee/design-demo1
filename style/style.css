@@ -321,9 +321,13 @@ header .scroll-down:hover {
   /* max-height: 600px; */
   display: block;
 
-  transition: all .5s;
+  transition: all 1s;
   transform: scale(1.2);
   /* opacity: 0; */
+}
+.product figure a:hover img{
+  transform: scale(1.3) !important;
+  z-index: 100;
 }
 /* .product figure::after {
   position: absolute;
