@@ -183,23 +183,17 @@ header p.mysubtitle {
 header h1 span {
   display: inline-block;
   opacity: 0;
-  animation-duration: 1.5s;
-  animation-name: fadein-down;
-  animation-timing-function: ease-out;
-  /* 让动画保持结束时的状态 */
-  animation-fill-mode: forwards;
-  /* 可以缩写为：animation: 1.5s ease-out forwards fadein-down; */
+}
+/* 为了在载入完成时出发动画，这里定义了 animation 类，配合 js 实现 */
+header h1 span.animation {
+  /* 使用的缩写形式 */
+  animation: 1.5s ease-out forwards fadein-down;
 }
 header p.mysubtitle {
   opacity: 0;
-
-  animation-duration: 1.5s;
-  animation-name: fadein-subtitle;
-  /* 让动画保持结束时的状态 */
-  animation-fill-mode: forwards;
-  /* 动画延迟1秒开始 */
-  animation-delay: 1s;
-  /* 可以缩写为 animation: 1.5s ease-out 1s forwards fadein-subtitle; */
+}
+header p.mysubtitle.animation {
+  animation: 1.5s ease-out 1s forwards fadein-subtitle;
 }
 /* 让标题文字依次出现 */
 header h1 span:nth-child(1){
