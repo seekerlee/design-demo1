@@ -84,6 +84,7 @@ nav .container {
   width: 72px;
   height: 72px;
   z-index: 100;
+  cursor: pointer;
 }
 #menu-button div {
   position: absolute;
@@ -91,6 +92,9 @@ nav .container {
   height: 2px;
   width: 24px;
   background-color: rgba(238, 236, 237, 1);
+  /* 设置 transition 过度 */
+  /* transition: <property> <duration> <timing-function> <delay>; */
+  transition: all .25s ease-in-out;
 }
 #menu-button div:nth-child(1) {
   top: 29px;
@@ -101,13 +105,56 @@ nav .container {
 #menu-button div:nth-child(3) {
   top: 41px;
 }
+/* 设置展开后的菜单按钮样式 */
+#menu-button.opened div{
+  background: #2C2D21 !important;
+}
+/* 设置 div 的旋转角度，形成 x 形 */
+#menu-button.opened div:nth-child(1) {
+  top: 35px;
+  transform: rotate(45deg);
+}
+#menu-button.opened div:nth-child(2) {
+  opacity: 0;
+}
+#menu-button.opened div:nth-child(3) {
+  top: 35px;
+  transform: rotate(-45deg);
+}
+
+/* 在 hover 时，让第二个 div 旋转 90 度，移动第一个和第三个 div 形成 + 号形状 */
+#menu-button:hover div:nth-child(2) {
+  transform: rotate(90deg);
+}
+#menu-button:hover div:nth-child(1), #menu-button:hover div:nth-child(3) {
+  top: 35px;
+}
 
 /* menus */
 .menu-container {
+  /* 相对于 viewport 绝对定位 */
+  position: fixed;
+  /* 设置大小为满屏 */
+  width: 100vw;
+  height: 100vh;
+  /* 让次元素在屏幕外(右上) */
+  left: 100vw;
+  top: -100vh;
+  transition: all .5s;
   background: rgba(238,236,237, 0);
   z-index: 50;
   padding: 0 96px;
-  display: none;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 菜单展开后的效果，配合 js 实现菜单展开*/
+.menu-container.opened {
+  /* 菜单展开后进入屏幕 */
+  left: 0;
+  top: 0;
+  background: rgb(238,236,237, 1);
 }
 
 .menu-container ul {
