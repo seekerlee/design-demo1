@@ -125,6 +125,34 @@ nav .container {
   color: #2C2D21;
 }
 
+/* header */
+/* 定义动画名为 fadein-down */
+@keyframes fadein-down {
+  from {
+    /* 动画的初始状态为往上偏移 1rem，完全透明 */
+    transform: translate(0, -1rem);
+    opacity:0;
+  }
+  to {
+    /* 动画的结束状态为不偏移，不透明 */
+    transform: translate(0);
+    opacity:1;
+  }
+}
+/* 定义动画名为 fadein-subtitle */
+@keyframes fadein-subtitle {
+  /* 动画的初始状态为：文字间距 6px，完全透明 */
+  from {
+    letter-spacing: 6px;
+    opacity:0;
+  }
+  to {
+    /* 动画的初始状态为：文字间距默认，不透明 */
+    letter-spacing: auto;
+    opacity:1;
+  }
+}
+
 header {
   display: flex;
   text-align: center;
@@ -150,6 +178,41 @@ header h1 {
 header p.mysubtitle {
   font-size: 4.5vw;
   text-transform: uppercase;
+}
+
+header h1 span {
+  display: inline-block;
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-name: fadein-down;
+  animation-timing-function: ease-out;
+  /* 让动画保持结束时的状态 */
+  animation-fill-mode: forwards;
+  /* 可以缩写为：animation: 1.5s ease-out forwards fadein-down; */
+}
+header p.mysubtitle {
+  opacity: 0;
+
+  animation-duration: 1.5s;
+  animation-name: fadein-subtitle;
+  /* 让动画保持结束时的状态 */
+  animation-fill-mode: forwards;
+  /* 动画延迟1秒开始 */
+  animation-delay: 1s;
+  /* 可以缩写为 animation: 1.5s ease-out 1s forwards fadein-subtitle; */
+}
+/* 让标题文字依次出现 */
+header h1 span:nth-child(1){
+  animation-delay: 0.2s;
+}
+header h1 span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+header h1 span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+header h1 span:nth-child(4) {
+  animation-delay: 0.8s;
 }
 
 header .scroll-down {
