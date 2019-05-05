@@ -1,4 +1,7 @@
 # 练习
+下载初始代码：https://github.com/seekerlee/design-demo1/archive/1.0.zip 或者 `git clone git@github.com:seekerlee/design-demo1.git`
+
+下载完成代码(可选)：https://github.com/seekerlee/design-demo1/archive/1.0-finish.zip
 
 ## 步骤
 0. 在本地打开浏览页面，安装 vs code Live Server 插件(可选)
