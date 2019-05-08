@@ -1,10 +1,10 @@
 # 练习
-下载初始代码：https://github.com/seekerlee/design-demo1/archive/1.0.zip 或者 `git clone git@github.com:seekerlee/design-demo1.git`
+下载代码：https://github.com/seekerlee/design-demo1/releases/download/1.0-before/demo.zip
 
-下载完成代码(可选)：https://github.com/seekerlee/design-demo1/archive/1.0-finish.zip
+解压后，会得到 demo 目录，目录中有 before, after 两个子目录，分别是初始代码和最终代码。最终代码仅作参考用。
 
 ## 步骤
-0. 在本地打开浏览页面，安装 vs code Live Server 插件(可选)
+0. 在本地打开浏览页面，用 sublimetext 或者 vs code
 
 1. 修改 copyright 和 background: fixed 增加 margin，让文字为卡片风格。[代码改动](https://github.com/seekerlee/design-demo1/commit/9ac2a64d57ea49b78c0db6703a8829176277b40a)
 
