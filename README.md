@@ -21,6 +21,7 @@
 7. 让菜单按钮在滚动后变色，让页面内链接平滑滚动。[代码改动](https://github.com/seekerlee/design-demo1/commit/2c48eef0634bddb8ce69ebd7fd9d54155931aed1)
 
 ## 文档
+- [我写的 HTML&CSS 入门教程](http://pushi.simon1987.com/)
 - [MDN: css transition](https://github.com/seekerlee/design-demo1/commit/2c48eef0634bddb8ce69ebd7fd9d54155931aed1)
 - [MDN: css animation](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
 - [pace.js](https://github.hubspot.com/pace/docs/welcome/) 实现页面载入进度条
