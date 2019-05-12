@@ -28,3 +28,7 @@
 - [ScrollMagic](http://scrollmagic.io/) 实现和网页滚动相关的交互
 - [bulma](https://bulma.io/) css 框架
 - [materialdesignicons](https://materialdesignicons.com/) css 字体图标
+
+
+## 演示文稿：
+https://github.com/seekerlee/design-demo1/releases/download/1.0-before/rich.interation.with.advanced.CSS.and.JS.key
